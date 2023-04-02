@@ -19,16 +19,47 @@ namespace Zadanie_5___okna_dialogowe
     /// </summary>
     public partial class AddEditMovieWindow : Window
     {
-        private Movie movieToAdd { get; set; }
+        public Movie addEditMovie { get; set; }
 
         public AddEditMovieWindow()
         {
             InitializeComponent();
+            addEditMovie = new Movie();
+            DataContext= addEditMovie;
         }
 
         public AddEditMovieWindow(Movie movie)
         {
+            InitializeComponent();
 
+            addEditMovie= new Movie();
+            addEditMovie.Title=movie.Title;
+            addEditMovie.Description=movie.Description;
+            addEditMovie.ReleaseDate=movie.ReleaseDate;
+
+            txtTitle.Text = addEditMovie.Title;
+            txtDescription.Text = addEditMovie.Description;
+            dtReleaseDate.SelectedDate = addEditMovie.ReleaseDate;
+
+            //DataContext = movie;
+        }
+
+
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            addEditMovie.Title = txtTitle.Text;
+            addEditMovie.Description = txtDescription.Text;
+            addEditMovie.ReleaseDate = dtReleaseDate.SelectedDate ??  DateTime.MinValue;
+     
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
         }
     }
 }

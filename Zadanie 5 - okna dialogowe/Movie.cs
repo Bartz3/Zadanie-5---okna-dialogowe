@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zadanie_5___okna_dialogowe
 {
-    internal class Movie
+    public class Movie
     {
         public string Title { get; set; }
         public string Description { get; set; }

@@ -10,33 +10,20 @@
         <DockPanel>
             <ToolBar DockPanel.Dock="Top">
                 <Button Click="AddClick">Dodaj</Button>
+                <Button Click="EditClick">Edytuj</Button>
                 <Button Click="DeleteClick">Usuń</Button>
+                <Button Click="PreviewClick">Podgląd</Button>
             </ToolBar>
             <Grid Margin="4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="63*" />
+                    <ColumnDefinition Width="199*"/>
                     <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="525*" />
                 </Grid.ColumnDefinitions>
-                <ListBox Margin="4" Name="MovieListBox"  />
-                <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Center"/>
-                <Grid Grid.Column="2" DataContext="{Binding ElementName=MovieListBox, Path=SelectedItem}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Label Margin="4">Tytuł</Label>
-                    <Label Grid.Row="1" Margin="4">Data wydania</Label>
-                    <Label Grid.Row="2" Margin="4">Opis</Label>
-                    <TextBox Name="boxName" Grid.Column="1" Margin="4" Text="{Binding Path=Name}"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="4" Text="{Binding Path=Price}"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Margin="4" Text="{Binding Path=Description}"/>
-                </Grid>
+                <ListBox Margin="4,4,4,4" Name="MovieListBox" Grid.ColumnSpan="2"  />
+                <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment="Center"/>
+
             </Grid>
         </DockPanel>
     </Grid>
