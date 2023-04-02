@@ -97,8 +97,6 @@ namespace Zadanie_5___okna_dialogowe
 
                     RefreshList();
                 }
-
-
             }
             
         }
@@ -112,8 +110,8 @@ namespace Zadanie_5___okna_dialogowe
                 if (previewWindow == null)
                 {
                     previewWindow = new MoviePreviewWindow(selectedMovie);
-                    previewWindow.Closed += PreviewWindowClosed;
-                    previewWindow.Owner = this;
+                    //previewWindow.Closed += PreviewWindowClosed;
+                    //previewWindow.Owner = this;
                     previewWindow.Title = selectedMovie.Title;
                     previewWindow.Show();
                 }

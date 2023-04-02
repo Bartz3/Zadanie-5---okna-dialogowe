@@ -53,7 +53,7 @@ namespace Zadanie_5___okna_dialogowe
         }
         public void ChangeMovie(Movie movie)
         {
-            Movie = movie;
+            //Movie = movie;
 
             this.Title = movie.Title;
             movieTitleTB.Text = movie.Title;
